@@ -26,9 +26,15 @@ public class RegisterController {
     private final static Logger log = Logger.getLogger(RegisterController.class);
     @Autowired
     private UserService userService;
+
+    /**
+     * 判断手机号是否可用
+     * @param phone
+     * @return
+     */
     @RequestMapping("/checkPhone")
     @ResponseBody
-    public Map<String, Object> checkPhone(Model model, @RequestParam(value = "phone", required = false) String phone) {
+    public Map<String, Object> checkPhone(@RequestParam(value = "phone", required = false) String phone) {
         log.debug("注册-判断手机号" + phone + "是否可用");
         Map map = new HashMap<String, Object>();
         User user = userService.findByPhone(phone);
@@ -43,6 +49,12 @@ public class RegisterController {
         return map;
     }
 
+    /**
+     * 判断验证码是否正确
+     * @param model
+     * @param code
+     * @return
+     */
     @RequestMapping("/checkCode")
     @ResponseBody
     public Map<String, Object> checkCode(Model model, @RequestParam(value = "code", required = false) String code) {
@@ -56,6 +68,29 @@ public class RegisterController {
             map.put("message", "success");
         } else {
             //验证码错误
+            map.put("message", "fail");
+        }
+
+        return map;
+    }
+
+    /**
+     * 判断邮箱是否可用
+     * @param model
+     * @param email
+     * @return
+     */
+    @RequestMapping("/checkEmail")
+    @ResponseBody
+    public Map<String, Object> checkEmail(Model model, @RequestParam(value = "email", required = false) String email) {
+        log.debug("注册-判断邮箱" + email + "是否可用");
+        Map map = new HashMap<String, Object>();
+        User user = userService.findByEmail(email);
+        if (user == null) {
+            //未注册
+            map.put("message", "success");
+        } else {
+            //已注册
             map.put("message", "fail");
         }
 
