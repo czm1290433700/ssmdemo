@@ -163,4 +163,62 @@ public class RegisterController {
         }
         return 1;
     }
+
+    /**
+     * 发送邮件
+     * @param model
+     * @return
+     */
+    @RequestMapping("/sendEmail")
+    @ResponseBody
+    public  Map<String,Object> sendEmail(Model model) {
+        Map map = new HashMap<String,Object>(  );
+        ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        String validateCode = attrs.getRequest().getParameter( "validateCode" );
+        String email = attrs.getRequest().getParameter( "email" );
+        SendEmail.sendEmailMessage(email,validateCode);
+        map.put( "success","success" );
+        return map;
+    }
+
+    @RequestMapping("/activecode")
+    public String active(Model model) {
+        log.info( "==============激活验证==================" );
+        //判断   激活有无过期 是否正确
+        //validateCode=
+        ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        String validateCode = attrs.getRequest().getParameter( "validateCode" );
+        String email = attrs.getRequest().getParameter( "email" );
+        String code = redisTemplate.opsForValue().get( email );
+        log.info( "验证邮箱为："+email+",邮箱激活码为："+code+",用户链接的激活码为："+validateCode );
+        //判断是否已激活
+
+        User userTrue = userService.findByEmail( email );
+        if(userTrue!=null && "1".equals( userTrue.getState() )){
+            //已激活
+            model.addAttribute( "success","您已激活,请直接登录！" );
+            return "../login";
+        }
+
+        if(code==null){
+            //激活码过期
+            model.addAttribute( "fail","您的激活码已过期,请重新注册！" );
+            userService.deleteByEmail( email );
+            return "/regist/activeFail";
+        }
+
+        if(StringUtils.isNotBlank( validateCode ) && validateCode.equals( code )){
+            //激活码正确
+            userTrue.setEnable( "1" );
+            userTrue.setState( "1" );
+            userService.update( userTrue );
+            model.addAttribute( "email",email );
+            return "/regist/activeSuccess";
+        }else {
+            //激活码错误
+            model.addAttribute( "fail","您的激活码错误,请重新激活！" );
+            return "/regist/activeFail";
+        }
+
+    }
 }
