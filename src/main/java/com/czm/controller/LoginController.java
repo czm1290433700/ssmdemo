@@ -1,5 +1,6 @@
 package com.czm.controller;
 
+import com.czm.common.CodeCaptchaServlet;
 import com.czm.common.Constants;
 import com.czm.common.MD5Util;
 import com.czm.entity.User;
@@ -61,7 +62,7 @@ public class LoginController extends BaseController {
 
     // 匹对验证码的正确性
     public int checkValidateCode(String code) {
-        Object vercode = getRequest().getSession().getAttribute("VERCODE_KEY");
+        Object vercode = getRequest().getSession().getAttribute(CodeCaptchaServlet.VERCODE_KEY);
         if (null == vercode) {
             return -1;
         }

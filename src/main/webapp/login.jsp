@@ -52,11 +52,11 @@
                     <form id="normal_form" name="form" role="form" class="login-form" action="${ctx}/doLogin" method="post">
                         <div class="form-group">
                             <label for="username" class="sr-only">用户名</label>
-                            <input type="text" id="username" name="username" onblur="checkUserName();" value="${email}" class="form-control" placeholder="用户名">
+                            <input type="text" id="username" name="username" onblur="checkUserName();" value="${user.email}" class="form-control" placeholder="用户名">
                         </div>
                         <div class="form-group">
                             <label for="password" class="sr-only">密码</label>
-                            <input type="password" id="password" name="password" onblur="checkPassword();" value="${password}" class="form-control" placeholder="密码">
+                            <input type="password" id="password" name="password" onblur="checkPassword();" value="${user.password}" class="form-control" placeholder="密码">
                         </div>
                         <div class="form-group">
                             <label for="code" class="sr-only">验证码</label>
@@ -75,10 +75,10 @@
                             <div class="checkbox">
                                 <label>
                                     <br/>
-                                    <c:if test="${state eq '1'}">
-                                    <input type="checkbox" name="state" id="loginstate" value="1" checked = checked> 记住登录状态
+                                    <c:if test="${user.state eq '1'}">
+                                        <input type="checkbox" name="state" id="loginstate" value="1" checked = checked> 记住登录状态
                                     </c:if>
-                                    <c:if test="${state eq '0'}">
+                                    <c:if test="${user.state eq '0'}">
                                         <input type="checkbox" name="state" value="0" id="loginstate"> 记住登录状态
                                     </c:if>
                                     <c:if test="${error eq 'fail'}">

@@ -1,6 +1,7 @@
 package com.czm.controller;
 
 import com.czm.common.CodeCaptchaServlet;
+import com.czm.common.Constants;
 import com.czm.common.MD5Util;
 import com.czm.common.SendEmail;
 import com.czm.entity.User;
@@ -132,14 +133,14 @@ public class RegisterController {
             user = new User();
             user.setNickName(nickname);
             //对密码加密
-            user.setPassword(MD5Util.encodeToHex("salt"+password));
+            user.setPassword(MD5Util.encodeToHex(Constants.SALT +password));
             user.setPhone(phone);
             user.setEmail(email);
             user.setState("0");
             user.setEnable("0");
             user.setImgUrl("/images/icon_m.jpg");
             //邮件激活码
-            String validateCode = MD5Util.encodeToHex("salt"+email + password);
+            String validateCode = MD5Util.encodeToHex(Constants.SALT +email + password);
             redisTemplate.opsForValue().set(email, validateCode, 24, TimeUnit.HOURS);// 24小时 有效激活 redis保存激活码
 
             userService.regist(user);
