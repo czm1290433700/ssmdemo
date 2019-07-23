@@ -48,6 +48,7 @@ public class LoginController extends BaseController {
                 return "../login";
             }
             log.info("用户登录登录成功");
+            getSession().setAttribute( "user",user );
             model.addAttribute("user",user);
             return "/personal/personal";
         }else{
@@ -70,4 +71,12 @@ public class LoginController extends BaseController {
         return 1;
     }
 
+    @RequestMapping("/login")
+    public String login(Model model) {
+        User user = (User)getSession().getAttribute("user");
+        if(user!=null){
+            return "/personal/personal";
+        }
+        return "../login";
+    }
 }
