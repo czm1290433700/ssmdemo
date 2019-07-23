@@ -17,6 +17,7 @@ import java.util.Random;
 
 /**
  * Created by wly on 2018/4/17.
+ * 验证码生成类
  */
 public class CodeCaptchaServlet extends HttpServlet {
 

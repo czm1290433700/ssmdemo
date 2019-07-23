@@ -60,7 +60,9 @@ public class RegisterController {
     public Map<String, Object> checkCode(Model model, @RequestParam(value = "code", required = false) String code) {
         log.debug("注册-判断验证码" + code + "是否可用");
         Map map = new HashMap<String, Object>();
+        //获取request请求对象
         ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        //获取request请求对象中的名字为"VERCODE_KEY"的session变量
         String vcode = (String) attrs.getRequest().getSession().getAttribute(CodeCaptchaServlet.VERCODE_KEY);
 
         if (code.equals(vcode)) {
@@ -129,7 +131,7 @@ public class RegisterController {
         } else {
             user = new User();
             user.setNickName(nickname);
-
+            //对密码加密
             user.setPassword(MD5Util.encodeToHex("salt"+password));
             user.setPhone(phone);
             user.setEmail(email);

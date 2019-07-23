@@ -11,6 +11,7 @@ import java.util.Properties;
 
 /**
  * Created by wly on 2018/3/7.
+ * 调用MyAuthenticator类实现发送邮件
  */
 public class SendEmail {
     private final static Logger log = Logger.getLogger( SendEmail.class);

@@ -43,9 +43,9 @@ function checkPhone(){
         }
         flag2 = false;
     }else{
-        var value = {"phone":phone};
         $.ajax({
             type:'post',
+            //这里在配置tomcat时需要不设置项目路径，才可以直接写/配置路径
             url:'/checkPhone',
             data: {"phone":phone},
             dataType:'json',

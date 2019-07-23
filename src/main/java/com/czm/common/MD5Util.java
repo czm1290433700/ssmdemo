@@ -5,6 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by wly on 2018/3/7.
+ * 加密工具类
  */
 public class MD5Util {
 
@@ -57,15 +58,15 @@ public class MD5Util {
     }
 
     public static void main(String[] args) {
-        String email = "dreamlandwang@163.com";
-        String password = "123456";
-        String s = encodeToHex( email+password );
-        System.out.println(s);
-
-        boolean validate = validate( email+password, s );
-        System.out.println(validate);
-
-        String em = encodeToHex("123456");
-        System.out.println(em);
+//        String email = "dreamlandwang@163.com";
+//        String password = "123456";
+//        String s = encodeToHex( email+password );
+//        System.out.println(s);
+//
+//        boolean validate = validate( email+password, s );
+//        System.out.println(validate);
+//
+//        String em = encodeToHex("123456");
+//        System.out.println(em);
     }
 }

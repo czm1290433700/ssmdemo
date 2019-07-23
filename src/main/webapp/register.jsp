@@ -27,14 +27,14 @@
                   <span id="reg_span"></span>
                   <input id="phone" name="phone" type="text" class="kuang_txt phone" placeholder="手机号" onblur="checkPhone();"><span id="phone_ok"></span>
                   <br/>
-                <span id="phone_span" style="color: red"></span>
-                <input id="email" name="email" type="text" class="kuang_txt email" placeholder="邮箱" onblur="checkEmail();"><span id="email_ok"></span>
+                  <span id="phone_span" style="color: red"></span>
+                  <input id="email" name="email" type="text" class="kuang_txt email" placeholder="邮箱" onblur="checkEmail();"><span id="email_ok"></span>
                   <br/>
                   <span id="email_span" style="color: red"></span>
-                <input id="password" name="password" type="password" class="kuang_txt possword" placeholder="密码" onKeyUp="CheckIntensity(this.value)" onblur="checkPassword();">
+                  <input id="password" name="password" type="password" class="kuang_txt possword" placeholder="密码" onKeyUp="CheckIntensity(this.value)" onblur="checkPassword();">
                   <br/>
                   <span id="password_span"></span>
-                <input id="nickName" name="nickName" type="text" class="kuang_txt possword" placeholder="昵称" onblur="checkNickName();">
+                  <input id="nickName" name="nickName" type="text" class="kuang_txt possword" placeholder="昵称" onblur="checkNickName();">
                   <br/>
                   <span id="nickName_span" style="color: red"></span>
                   <input id="code" name="code" type="text" class="kuang_txt yanzm" placeholder="验证码" onblur="checkCode()">
@@ -46,12 +46,12 @@
                       <a href="javascript:;"
                          onClick="changeCaptcha()" style="color: #666;">看不清楚</a> <span id="code_span" style="color: red"></span>
                   </div>
-                <div>
-               		<input id="protocol" type="checkbox" onclick="checkProtocol();"><span>已阅读并同意<a href="#" target="_blank" ><span class="lan">《梦境网用户协议》</span></a></span>
-                    <br/>
-                    <span id="protocol_span"></span>
-                </div>
-                <input name="注册" type="button" class="btn_zhuce" id ="to_register" value="注册">
+                  <div>
+               		  <input id="protocol" type="checkbox" onclick="checkProtocol();"><span>已阅读并同意<a href="#" target="_blank" ><span class="lan">《梦境网用户协议》</span></a></span>
+                      <br/>
+                      <span id="protocol_span"></span>
+                  </div>
+                  <input name="注册" type="button" class="btn_zhuce" id ="to_register" value="注册">
                   <br/>
                   <span style="color: red">${error}</span>
                 
