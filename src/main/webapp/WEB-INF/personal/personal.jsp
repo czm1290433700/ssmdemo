@@ -7,272 +7,16 @@
 <head>
     <meta charset="UTF-8">
     <title>个人空间</title>
-    <link href="${ctx}/css/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="${ctx}/css/bootstrap/css/bootstrap.css" rel="stylesheet"/>
     <link href="${ctx}/css/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
-    <link href="${ctx}/css/zui/css/zui.min.css" rel="stylesheet"/>
-    <link href="${ctx}/css/zui/css/zui-theme.min.css" rel="stylesheet"/>
+    <link href="${ctx}/css/zui/css/zui.css" rel="stylesheet"/>
+    <link href="${ctx}/css/zui/css/zui-theme.css" rel="stylesheet"/>
+    <link href="${ctx}/css/personal.css" rel="stylesheet"/>
     <script type="text/javascript" src="${ctx}/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="${ctx}/css/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="${ctx}/css/zui/js/zui.min.js"></script>
-    <script src="${ctx}/css/zui/lib/kindeditor/kindeditor.min.js"></script>
-    <style>
-        body,html{
-            background-color: #EBEBEB;
-            padding: 0;
-            margin: 0;
-            height:100%;
-        }
-        body {
-            font: 14px/1.5 "PingFang SC","Lantinghei SC","Microsoft YaHei","HanHei SC","Helvetica Neue","Open Sans",Arial,"Hiragino Sans GB","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
-        }
-        .title-content a{
-            text-decoration:none;
-        }
-        .stats-buttons  a{
-            text-decoration:none;
-        }
-        .author-card {
-            margin-bottom: 10px;
-            margin-left: 50px;
-        }
-
-        .designer-card {
-            margin: 0;
-            display: block;
-        }
-        .card-media {
-            width: 220px;
-            height: 280px;
-        }
-        .designer-card {
-            background: #fff;
-            border-radius: 4px;
-            text-align: center;
-            padding: 30px 0 20px;
-            overflow: hidden;
-            display: inline-block;
-            margin: 0 20px 20px 0;
-            float: left;
-            width: 280px;
-            height: 380px;
-        }
-       /* 梦分类*/
-        .dreamland-diff{
-            display: block;
-            width: 280px;
-           min-height: 60px;
-            margin-top: 399px;
-            position: absolute;
-            background-color: #EBEBEB;
-        }
-        /*关注*/
-        .dreamland-see{
-            display: block;
-            width: 280px;
-            min-height: 550px;
-            margin-top: 750px;
-            position: absolute;
-            background-color: white;
-        }
-
-        /*被关注*/
-        .dreamland-bysee{
-            display: block;
-            width: 280px;
-            min-height: 550px;
-            margin-top: 1320px;
-            position: absolute;
-            background-color: white;
-        }
-        .avatar-container-80.center {
-            margin: 0 auto;
-            position: relative;
-            left: inherit;
-            transform: inherit;
-        }
-        .avatar-container-80 {
-            width: 80px;
-        }
-        a {
-            color: inherit;
-            outline: 0;
-        }
-
-        .designer-card img {
-            border-radius: 50%;
-            vertical-align: middle;
-        }
-        img {
-            border: 0;
-        }
-        a {
-            color: inherit;
-            outline: 0;
-        }
-        a:-webkit-any-link {
-            cursor: pointer;
-
-        }
-        .designer-card .position-info {
-            margin-bottom: 20px;
-        }
-        .designer-card .btn-area {
-            padding: 0 20px;
-        }
-        .designer-card .btn-area .js-project-focus-btn {
-            height: 32px;
-        }
-        .designer-card .js-project-focus-btn {
-            float: left;
-        }
-        .js-project-focus-btn {
-            display: inline-block;
-            position: relative;
-        }
-        .btn-default-main {
-            color: #444;
-            background: #ffd100;
-            border: 1px solid #ffd100;
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .designer-card .btn-area .btn-current {
-            width: 83px;
-            height: 36px;
-        }
-        .designer-card .btn-area .private-letter {
-            margin-right: 0;
-        }
-        .card-media .private-letter {
-            float: right;
-        }
-        .btn-default-secondary {
-            color: #666;
-            background: 0 0;
-            border: 1px solid #bbb;
-            border-radius: 4px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .dreamland-content{
-            float: left;
-            width: 800px;
-            min-height:100%;
-            position: relative;
-        }
-        .foot-nav-col li{
-            list-style: none;
-            margin-left: 70px;
-        }
-        .foot-nav-col h3{
-            margin-left:90px;
-        }
-        .foot-nav-col a{
-            text-decoration:none;
-            color:grey;
-
-        }
-        .foot-nav-col a:link,a:visited { color:grey;}
-        .foot-nav-col a:hover,a:active { color: #6318ff;}
-
-        .foot-nav-col{
-            margin-top: 10px;
-            float: left;
-        }
-
-        .author img {
-            width: 35px;
-            height: 35px;
-            border-radius: 35px;
-            padding: 0;
-            margin-right: 10px;
-        }
-        fieldset, img {
-            border: 0;
-        }
-        .author a, .author span {
-            float: left;
-            font-size: 14px;
-            font-weight: 700;
-            line-height: 35px;
-            color: #9b8878;
-            text-decoration: none;
-        }
-
-        .author-h2 {
-            display: block;
-            font-size: 1.5em;
-            -webkit-margin-before: 0.83em;
-            -webkit-margin-after: 0.83em;
-            -webkit-margin-start: 0px;
-            -webkit-margin-end: 0px;
-            font-weight: bold;
-            font-size: 100%;
-            font-weight: 400;
-        }
-
-    /* 左侧*/
-
-         .ibx-advice {
-             position: fixed;
-             top: 140px;
-             right: -82px;
-             overflow: hidden;
-             height: 30px;
-             width: 115px;
-             background-color: #EBEBEB;
-             -moz-transition: right .5s;
-             -webkit-transition: right .5s;
-             transition: right .5s;
-             cursor: pointer;
-             z-index: 10;
-         }
-
-        .glyphicon glyphicon-edit{
-            float: left;
-            width: 43px;
-            height: 42px;
-            border: 1px solid #d6d6d6;
-            border-right: none;
-            cursor: pointer;
-
-        }
-        .tab li{list-style:none}
-        .table tr:hover{background-color: #dafdf3;}
-
-        .content-bar{
-            padding: 30px;
-        }
-        .dreamland-fix{
-            list-style-type:none;
-            margin-left: 10px;
-            margin-right: 30px;
-        }
-        .bar-commend{
-            float: right;
-            margin-right: 20px;
-            color: grey;
-        }
-        .bar-read{
-            float: right;
-            margin-right: 20px;
-            color: grey;
-       }
-        .bar-update{
-            float: right;
-            margin-right: 20px;
-            color: grey;
-        }
-
-        .bar-delete{
-            margin-right: 20px;
-            float: right;
-            color: grey;
-        }
-    </style>
+    <script type="text/javascript" src="${ctx}/css/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="${ctx}/css/zui/js/zui.js"></script>
+    <script src="${ctx}/css/zui/lib/kindeditor/kindeditor.js"></script>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -312,10 +56,10 @@
             </ul>
 
             <ul class="nav navbar-nav">
-                <li><a href="${ctx}/writedream?id=${user.id}">写梦</a></li>
+                <li><a href="${ctx}/writedream?id=${user.userId}">写梦</a></li>
             </ul>
             <ul class="nav navbar-nav" style="margin-left: 680px">
-                <li><a href="${ctx}/list?id=${user.id}">${user.nickName}
+                <li><a href="${ctx}/list?id=${user.userId}">${user.nickName}
 
                 </a></li>
             </ul>
@@ -384,7 +128,7 @@
             </div>
 
             <div style="float: left;margin-top: 40px; margin-left: 130px;">
-                <a href="${ctx}/profile?id=${user.id}"><i class="icon icon-edit"></i><span style="margin-left: 10px">修改个人资料</span></a>
+                <a href="${ctx}/profile?id=${user.userId}"><i class="icon icon-edit"></i><span style="margin-left: 10px">修改个人资料</span></a>
             </div>
         </div>
     </div>
@@ -696,14 +440,14 @@
                         <li class="previous"><a href="javascript:void(0);">« 上一页</a></li>
                     </c:if>
                     <c:if test="${page.pageNum > 1}">
-                        <li class="previous"><a href="${ctx}/list?pageNum=${page.pageNum-1}&&id=${user.id}">« 上一页</a></li>
+                        <li class="previous"><a href="${ctx}/list?pageNum=${page.pageNum-1}&&id=${user.userId}">« 上一页</a></li>
                     </c:if>
                     <c:forEach begin="1" end="${page.pages}" var="pn">
                         <c:if test="${page.pageNum==pn}">
                             <li class="active"><a href="javascript:void(0);">${pn}</a></li>
                         </c:if>
                         <c:if test="${page.pageNum!=pn}">
-                            <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.id}">${pn}</a></li>
+                            <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.userId}">${pn}</a></li>
                         </c:if>
                     </c:forEach>
 
@@ -711,7 +455,7 @@
                         <li><a href="javascript:void(0);">下一页 »</a></li>
                     </c:if>
                     <c:if test="${page.pageNum<page.pages}">
-                        <li><a href="${ctx}/list?pageNum=${page.pageNum+1}&&id=${user.id}">下一页 »</a></li>
+                        <li><a href="${ctx}/list?pageNum=${page.pageNum+1}&&id=${user.userId}">下一页 »</a></li>
                     </c:if>
 
                 </ul>
@@ -740,14 +484,14 @@
                         <li class="previous"><a href="javascript:void(0);">« 上一页</a></li>
                     </c:if>
                     <c:if test="${page.pageNum > 1}">
-                        <li class="previous"><a href="${ctx}/list?pageNum=${page.pageNum-1}&&id=${user.id}">« 上一页</a></li>
+                        <li class="previous"><a href="${ctx}/list?pageNum=${page.pageNum-1}&&id=${user.userId}">« 上一页</a></li>
                     </c:if>
                     <c:forEach begin="1" end="${page.pages}" var="pn">
                         <c:if test="${page.pageNum==pn}">
                             <li class="active"><a href="javascript:void(0);">${pn}</a></li>
                         </c:if>
                         <c:if test="${page.pageNum!=pn}">
-                            <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.id}">${pn}</a></li>
+                            <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.userId}">${pn}</a></li>
                         </c:if>
                     </c:forEach>
 
@@ -755,7 +499,7 @@
                         <li><a href="javascript:void(0);">下一页 »</a></li>
                     </c:if>
                     <c:if test="${page.pageNum<page.pages}">
-                        <li><a href="${ctx}/list?pageNum=${page.pageNum+1}&&id=${user.id}">下一页 »</a></li>
+                        <li><a href="${ctx}/list?pageNum=${page.pageNum+1}&&id=${user.userId}">下一页 »</a></li>
                     </c:if>
 
                 </ul>
@@ -783,14 +527,14 @@
                     <li class="previous"><a href="javascript:void(0);">« 上一页</a></li>
                 </c:if>
                 <c:if test="${page2.pageNum > 1}">
-                    <li class="previous"><a href="${ctx}/list?pageNum=${page2.pageNum-1}&&id=${user.id}">« 上一页</a></li>
+                    <li class="previous"><a href="${ctx}/list?pageNum=${page2.pageNum-1}&&id=${user.userId}">« 上一页</a></li>
                 </c:if>
                 <c:forEach begin="1" end="${page.pages}" var="pn">
                     <c:if test="${page2.pageNum==pn}">
                         <li class="active"><a href="javascript:void(0);">${pn}</a></li>
                     </c:if>
                     <c:if test="${page2.pageNum!=pn}">
-                        <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.id}">${pn}</a></li>
+                        <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.userId}">${pn}</a></li>
                     </c:if>
                 </c:forEach>
 
@@ -798,7 +542,7 @@
                     <li><a href="javascript:void(0);">下一页 »</a></li>
                 </c:if>
                 <c:if test="${page2.pageNum<page2.pages}">
-                    <li><a href="${ctx}/list?pageNum=${page2.pageNum+1}&&id=${user.id}">下一页 »</a></li>
+                    <li><a href="${ctx}/list?pageNum=${page2.pageNum+1}&&id=${user.userId}">下一页 »</a></li>
                 </c:if>
 
             </ul>
@@ -837,14 +581,14 @@
                     <li class="previous"><a href="javascript:void(0);">« 上一页</a></li>
                 </c:if>
                 <c:if test="${hotPage.pageNum > 1}">
-                    <li class="previous"><a href="${ctx}/list?pageNum=${hotPage.pageNum-1}&&id=${user.id}">« 上一页</a></li>
+                    <li class="previous"><a href="${ctx}/list?pageNum=${hotPage.pageNum-1}&&id=${user.userId}">« 上一页</a></li>
                 </c:if>
                 <c:forEach begin="1" end="${hotPage.pages}" var="pn">
                     <c:if test="${hotPage.pageNum==pn}">
                         <li class="active"><a href="javascript:void(0);">${pn}</a></li>
                     </c:if>
                     <c:if test="${hotPage.pageNum!=pn}">
-                        <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.id}">${pn}</a></li>
+                        <li ><a href="${ctx}/list?pageNum=${pn}&&id=${user.userId}">${pn}</a></li>
                     </c:if>
                 </c:forEach>
 
@@ -852,7 +596,7 @@
                     <li><a href="javascript:void(0);">下一页 »</a></li>
                 </c:if>
                 <c:if test="${hotPage.pageNum<hotPage.pages}">
-                    <li><a href="${ctx}/list?pageNum=${hotPage.pageNum+1}&&id=${user.id}">下一页 »</a></li>
+                    <li><a href="${ctx}/list?pageNum=${hotPage.pageNum+1}&&id=${user.userId}">下一页 »</a></li>
                 </c:if>
 
             </ul>
@@ -863,7 +607,7 @@
 <!--右侧-->
 
 <div class="ibx-advice" onmouseover="changeBackColor();" onmouseout="back2color();">
-    <a href="${ctx}/writedream?id=${user.id}"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="color:#1b1b1b;font-size:30px;" title="写梦"></span></a>
+    <a href="${ctx}/writedream?id=${user.userId}"><span class="glyphicon glyphicon-edit" aria-hidden="true" style="color:#1b1b1b;font-size:30px;" title="写梦"></span></a>
 </div>
 
 <!--底部-->
