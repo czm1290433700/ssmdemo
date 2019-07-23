@@ -3,6 +3,7 @@ package com.czm.service;
 import com.czm.common.PageHelper;
 import com.czm.entity.Comment;
 import com.czm.entity.UserContent;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

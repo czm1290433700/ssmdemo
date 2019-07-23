@@ -2,6 +2,7 @@ package com.czm.service;
 
 import com.czm.entity.RoleUser;
 import com.czm.entity.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

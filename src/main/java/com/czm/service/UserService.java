@@ -1,6 +1,7 @@
 package com.czm.service;
 
 import com.czm.entity.User;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by 12903 on 2018/4/16.

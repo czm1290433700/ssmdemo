@@ -5,31 +5,32 @@ import com.czm.entity.User;
 import com.czm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * Created by wly on 2017/12/15.
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
-    @Override
-    @Transactional
+
     public int regist(User user) {
-        return userMapper.insert(user);
+       return userMapper.insert(user);
     }
 
-    @Override
-    public User login(String email, String password) {
+    public User login(String name, String password) {
         User user = new User();
-        user.setEmail(email);
-        user.setPassword(password);
-        return userMapper.selectOne(user);
+        user.setEmail( name );
+        user.setPassword( password );
+        return userMapper.selectOne( user );
+        //return userMapper.findUserByNameAndPwd( name,password );
     }
 
-    @Override
     public User findByEmail(String email) {
         User user = new User();
-        user.setEmail(email);
-        return userMapper.selectOne(user);
+        user.setEmail( email );
+        return userMapper.selectOne( user );
+       // return userMapper.findByEmail(email);
     }
 
     @Override
@@ -46,17 +47,39 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectOne(user);
     }
 
-    @Override
-    @Transactional
-    public void deleteByEmail(String email) {
+    public User findByEmailActive(String email) {
         User user = new User();
-        user.setEmail(email);
-        userMapper.delete(user);
+        user.setEmail( email );
+        return userMapper.selectOne( user );
+        // return userMapper.findByEmail(email);
     }
 
-    @Override
-    @Transactional
+    public User findById(String id) {
+        User user = new User();
+        Long uid = Long.parseLong( id );
+        user.setUserId( uid );
+        return userMapper.selectOne( user );
+    }
+
+    public User findById(long id) {
+        User user = new User();
+        user.setUserId( id );
+        return userMapper.selectOne( user );
+    }
+
+    public void deleteByEmail(String email) {
+        User user = new User();
+        user.setEmail( email );
+        userMapper.delete( user );
+    }
+
+    public void deleteByEmailAndFalse(String email) {
+        User user = new User();
+        user.setEmail( email );
+        userMapper.delete( user );
+    }
+
     public void update(User user) {
-        userMapper.updateByPrimaryKeySelective(user);
+        userMapper.updateByPrimaryKeySelective( user );
     }
 }

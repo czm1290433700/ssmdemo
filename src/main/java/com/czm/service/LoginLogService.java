@@ -3,6 +3,7 @@ package com.czm.service;
 
 
 import com.czm.entity.LoginLog;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

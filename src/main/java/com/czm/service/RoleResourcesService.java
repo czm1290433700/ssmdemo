@@ -1,6 +1,7 @@
 package com.czm.service;
 
 import com.czm.entity.RoleResource;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
