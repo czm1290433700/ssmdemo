@@ -29,7 +29,7 @@ public class CommentServiceImpl implements CommentService {
 
     public List<Comment> findAll(Long cid) {
         Comment comment = new Comment();
-        comment.setId(cid);
+        comment.setConId(cid);
         return commentMapper.select(comment);
     }
 
@@ -42,14 +42,14 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> findAllFirstComment(Long cid)
     {
         Comment comment = new Comment();
-        comment.setId(cid);
+        comment.setConId(cid);
         return commentMapper.select(comment);
     }
 
     public List<Comment> findAllChildrenComment(Long cid, String children) {
         Comment comment = new Comment();
-        comment.setId(cid);
-        comment.setIds(children);
+        comment.setConId(cid);
+        comment.setChildren(children);
         return commentMapper.select(comment);
     }
 

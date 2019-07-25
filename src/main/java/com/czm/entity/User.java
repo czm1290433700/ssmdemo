@@ -1,11 +1,7 @@
 package com.czm.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 public class User {
-    private Long userId;
+    private Long id;
 
     private String email;
 
@@ -21,12 +17,12 @@ public class User {
 
     private String enable;
 
-    public Long getUserId() {
-        return userId;
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getEmail() {

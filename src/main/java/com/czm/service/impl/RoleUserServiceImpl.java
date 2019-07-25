@@ -19,7 +19,7 @@ public class RoleUserServiceImpl implements RoleUserService {
 
     public List<RoleUser> findByUser(User user) {
         RoleUser roleUser = new RoleUser();
-        roleUser.setUserId( user.getUserId() );
+        roleUser.setuId( user.getId() );
         return roleUserMapper.select( roleUser );
     }
 
@@ -29,7 +29,7 @@ public class RoleUserServiceImpl implements RoleUserService {
 
     public void deleteByUid(Long uid) {
         RoleUser roleUser = new RoleUser();
-        roleUser.setUserId( uid );
+        roleUser.setuId( uid );
         roleUserMapper.delete( roleUser );
     }
 }

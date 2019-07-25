@@ -3,9 +3,9 @@ package com.czm.entity;
 public class RoleUser {
     private Long id;
 
-    private Long userId;
+    private Long uId;
 
-    private Long roleId;
+    private Long rId;
 
     public Long getId() {
         return id;
@@ -15,19 +15,19 @@ public class RoleUser {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getuId() {
+        return uId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public Long getrId() {
+        return rId;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setrId(Long rId) {
+        this.rId = rId;
     }
 }

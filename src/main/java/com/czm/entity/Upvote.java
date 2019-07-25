@@ -5,17 +5,17 @@ import java.util.Date;
 public class Upvote {
     private Long id;
 
-    private Long agreeuserId;
+    private Long uId;
 
-    private Long articleId;
+    private Long contentId;
 
     private String ip;
 
-    private String agreement;
+    private String upvote;
 
-    private String disagreement;
+    private String downvote;
 
-    private Date time;
+    private Date upvoteTime;
 
     public Long getId() {
         return id;
@@ -25,20 +25,20 @@ public class Upvote {
         this.id = id;
     }
 
-    public Long getAgreeuserId() {
-        return agreeuserId;
+    public Long getuId() {
+        return uId;
     }
 
-    public void setAgreeuserId(Long agreeuserId) {
-        this.agreeuserId = agreeuserId;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
-    public Long getArticleId() {
-        return articleId;
+    public Long getContentId() {
+        return contentId;
     }
 
-    public void setArticleId(Long articleId) {
-        this.articleId = articleId;
+    public void setContentId(Long contentId) {
+        this.contentId = contentId;
     }
 
     public String getIp() {
@@ -49,27 +49,27 @@ public class Upvote {
         this.ip = ip == null ? null : ip.trim();
     }
 
-    public String getAgreement() {
-        return agreement;
+    public String getUpvote() {
+        return upvote;
     }
 
-    public void setAgreement(String agreement) {
-        this.agreement = agreement == null ? null : agreement.trim();
+    public void setUpvote(String upvote) {
+        this.upvote = upvote == null ? null : upvote.trim();
     }
 
-    public String getDisagreement() {
-        return disagreement;
+    public String getDownvote() {
+        return downvote;
     }
 
-    public void setDisagreement(String disagreement) {
-        this.disagreement = disagreement == null ? null : disagreement.trim();
+    public void setDownvote(String downvote) {
+        this.downvote = downvote == null ? null : downvote.trim();
     }
 
-    public Date getTime() {
-        return time;
+    public Date getUpvoteTime() {
+        return upvoteTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setUpvoteTime(Date upvoteTime) {
+        this.upvoteTime = upvoteTime;
     }
 }

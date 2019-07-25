@@ -3,28 +3,28 @@ package com.czm.entity;
 import java.util.Date;
 
 public class LoginLog {
-    private Long loginId;
+    private Long id;
 
-    private Long userId;
+    private Long uId;
 
     private String ip;
 
-    private Date time;
+    private Date createTime;
 
-    public Long getLoginId() {
-        return loginId;
+    public Long getId() {
+        return id;
     }
 
-    public void setLoginId(Long loginId) {
-        this.loginId = loginId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getuId() {
+        return uId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
     public String getIp() {
@@ -35,11 +35,11 @@ public class LoginLog {
         this.ip = ip == null ? null : ip.trim();
     }
 
-    public Date getTime() {
-        return time;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

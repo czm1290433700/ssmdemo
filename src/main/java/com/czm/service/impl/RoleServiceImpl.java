@@ -16,7 +16,7 @@ public class RoleServiceImpl implements RoleService {
 
     public Role findById(long id) {
         Role role = new Role();
-        role.setRoleId(id);
+        role.setId( id );
         return roleMapper.selectOne( role );
     }
 

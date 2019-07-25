@@ -37,7 +37,7 @@ public class LoginLogServiceImpl implements LoginLogService {
     @Override
     public List<LoginLog> findByUid(Long uid) {
         LoginLog loginLog = new LoginLog();
-        loginLog.setUserId(uid);
+        loginLog.setuId(uid);
         return loginLogMapper.select(loginLog);
     }
 }

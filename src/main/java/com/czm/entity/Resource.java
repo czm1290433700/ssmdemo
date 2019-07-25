@@ -1,22 +1,22 @@
 package com.czm.entity;
 
 public class Resource {
-    private Long resourcesId;
+    private Long id;
 
     private String name;
 
     private String url;
 
-    private String isuserable;
+    private String enabled;
 
     private String remark;
 
-    public Long getResourcesId() {
-        return resourcesId;
+    public Long getId() {
+        return id;
     }
 
-    public void setResourcesId(Long resourcesId) {
-        this.resourcesId = resourcesId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -35,12 +35,12 @@ public class Resource {
         this.url = url == null ? null : url.trim();
     }
 
-    public String getIsuserable() {
-        return isuserable;
+    public String getEnabled() {
+        return enabled;
     }
 
-    public void setIsuserable(String isuserable) {
-        this.isuserable = isuserable == null ? null : isuserable.trim();
+    public void setEnabled(String enabled) {
+        this.enabled = enabled == null ? null : enabled.trim();
     }
 
     public String getRemark() {

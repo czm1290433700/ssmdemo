@@ -3,44 +3,44 @@ package com.czm.entity;
 import java.util.Date;
 
 public class UserContent {
-    private Long articleId;
+    private Long id;
 
-    private Long userId;
+    private Long uId;
 
     private String title;
 
-    private String type;
+    private String category;
 
-    private String isprivate;
+    private String personal;
 
-    private Date time;
+    private Date rptTime;
 
     private String imgUrl;
 
-    private String name;
+    private String nickName;
 
-    private Integer agreenum;
+    private Integer upvote;
 
-    private Integer disagreenum;
+    private Integer downvote;
 
-    private Integer commentnum;
+    private Integer commentNum;
 
     private String content;
 
-    public Long getArticleId() {
-        return articleId;
+    public Long getId() {
+        return id;
     }
 
-    public void setArticleId(Long articleId) {
-        this.articleId = articleId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getuId() {
+        return uId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
     public String getTitle() {
@@ -51,28 +51,28 @@ public class UserContent {
         this.title = title == null ? null : title.trim();
     }
 
-    public String getType() {
-        return type;
+    public String getCategory() {
+        return category;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setCategory(String category) {
+        this.category = category == null ? null : category.trim();
     }
 
-    public String getIsprivate() {
-        return isprivate;
+    public String getPersonal() {
+        return personal;
     }
 
-    public void setIsprivate(String isprivate) {
-        this.isprivate = isprivate == null ? null : isprivate.trim();
+    public void setPersonal(String personal) {
+        this.personal = personal == null ? null : personal.trim();
     }
 
-    public Date getTime() {
-        return time;
+    public Date getRptTime() {
+        return rptTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setRptTime(Date rptTime) {
+        this.rptTime = rptTime;
     }
 
     public String getImgUrl() {
@@ -83,36 +83,36 @@ public class UserContent {
         this.imgUrl = imgUrl == null ? null : imgUrl.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setNickName(String nickName) {
+        this.nickName = nickName == null ? null : nickName.trim();
     }
 
-    public Integer getAgreenum() {
-        return agreenum;
+    public Integer getUpvote() {
+        return upvote;
     }
 
-    public void setAgreenum(Integer agreenum) {
-        this.agreenum = agreenum;
+    public void setUpvote(Integer upvote) {
+        this.upvote = upvote;
     }
 
-    public Integer getDisagreenum() {
-        return disagreenum;
+    public Integer getDownvote() {
+        return downvote;
     }
 
-    public void setDisagreenum(Integer disagreenum) {
-        this.disagreenum = disagreenum;
+    public void setDownvote(Integer downvote) {
+        this.downvote = downvote;
     }
 
-    public Integer getCommentnum() {
-        return commentnum;
+    public Integer getCommentNum() {
+        return commentNum;
     }
 
-    public void setCommentnum(Integer commentnum) {
-        this.commentnum = commentnum;
+    public void setCommentNum(Integer commentNum) {
+        this.commentNum = commentNum;
     }
 
     public String getContent() {

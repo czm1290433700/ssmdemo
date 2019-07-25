@@ -27,7 +27,7 @@ public class UserContentServiceImpl implements UserContentService {
 
     public List<UserContent> findByUserId(Long uid) {
         UserContent userContent = new UserContent();
-        userContent.setUserId(uid);
+        userContent.setuId(uid);
         List<UserContent> list = userContentMapper.select( userContent );
         return list;
     }
@@ -42,9 +42,7 @@ public class UserContentServiceImpl implements UserContentService {
         System.out.println("每页显示："+pageSize+"条");
         PageHelper.startPage(pageNum, pageSize);//开始分页
         List<UserContent> list =  userContentMapper.select( content );
-        //List<UserContent> list = userContentMapper.findAllContent();
         PageHelper.Page endPage = PageHelper.endPage();//分页结束
-        List<UserContent> result = endPage.getResult();
         return endPage;
     }
 
@@ -73,9 +71,10 @@ public class UserContentServiceImpl implements UserContentService {
 
     public UserContent findById(long id) {
         UserContent userContent = new UserContent();
-        userContent.setArticleId( id );
+        userContent.setId( id );
         return userContentMapper.selectOne( userContent );
     }
+
 
     public void updateById(UserContent content) {
         userContentMapper.updateByPrimaryKeySelective( content );

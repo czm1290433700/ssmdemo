@@ -5,19 +5,19 @@ import java.util.Date;
 public class Comment {
     private Long id;
 
-    private Long articleId;
+    private Long conId;
 
-    private Long observerId;
+    private Long comId;
 
-    private Long byreviewerId;
+    private Long byId;
 
-    private Date time;
+    private Date commTime;
 
-    private String ids;
+    private String children;
 
-    private Integer likenum;
+    private Integer upvote;
 
-    private String content;
+    private String comContent;
 
     public Long getId() {
         return id;
@@ -27,59 +27,59 @@ public class Comment {
         this.id = id;
     }
 
-    public Long getArticleId() {
-        return articleId;
+    public Long getConId() {
+        return conId;
     }
 
-    public void setArticleId(Long articleId) {
-        this.articleId = articleId;
+    public void setConId(Long conId) {
+        this.conId = conId;
     }
 
-    public Long getObserverId() {
-        return observerId;
+    public Long getComId() {
+        return comId;
     }
 
-    public void setObserverId(Long observerId) {
-        this.observerId = observerId;
+    public void setComId(Long comId) {
+        this.comId = comId;
     }
 
-    public Long getByreviewerId() {
-        return byreviewerId;
+    public Long getById() {
+        return byId;
     }
 
-    public void setByreviewerId(Long byreviewerId) {
-        this.byreviewerId = byreviewerId;
+    public void setById(Long byId) {
+        this.byId = byId;
     }
 
-    public Date getTime() {
-        return time;
+    public Date getCommTime() {
+        return commTime;
     }
 
-    public void setTime(Date time) {
-        this.time = time;
+    public void setCommTime(Date commTime) {
+        this.commTime = commTime;
     }
 
-    public String getIds() {
-        return ids;
+    public String getChildren() {
+        return children;
     }
 
-    public void setIds(String ids) {
-        this.ids = ids == null ? null : ids.trim();
+    public void setChildren(String children) {
+        this.children = children == null ? null : children.trim();
     }
 
-    public Integer getLikenum() {
-        return likenum;
+    public Integer getUpvote() {
+        return upvote;
     }
 
-    public void setLikenum(Integer likenum) {
-        this.likenum = likenum;
+    public void setUpvote(Integer upvote) {
+        this.upvote = upvote;
     }
 
-    public String getContent() {
-        return content;
+    public String getComContent() {
+        return comContent;
     }
 
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
+    public void setComContent(String comContent) {
+        this.comContent = comContent == null ? null : comContent.trim();
     }
 }

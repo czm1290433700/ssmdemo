@@ -17,7 +17,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     public UserInfo findByUid(Long id) {
         UserInfo userInfo = new UserInfo();
-        userInfo.setUserId(id);
+        userInfo.setuId(id);
         return userInfoMapper.selectOne(userInfo);
     }
 

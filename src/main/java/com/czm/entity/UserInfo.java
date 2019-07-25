@@ -5,13 +5,13 @@ import java.util.Date;
 public class UserInfo {
     private Long id;
 
-    private Long userId;
+    private Long uId;
 
     private String name;
 
     private String sex;
 
-    private Date birhday;
+    private Date birthday;
 
     private String hobby;
 
@@ -25,12 +25,12 @@ public class UserInfo {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getuId() {
+        return uId;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setuId(Long uId) {
+        this.uId = uId;
     }
 
     public String getName() {
@@ -49,12 +49,12 @@ public class UserInfo {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Date getBirhday() {
-        return birhday;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setBirhday(Date birhday) {
-        this.birhday = birhday;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getHobby() {

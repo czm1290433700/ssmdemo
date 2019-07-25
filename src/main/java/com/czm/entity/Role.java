@@ -1,56 +1,56 @@
 package com.czm.entity;
 
 public class Role {
-    private Long roleId;
+    private Long id;
 
-    private String name;
+    private String roleName;
 
-    private String value;
+    private String roleValue;
 
-    private String url;
+    private String roleMatcher;
 
-    private String isuserable;
+    private String enabled;
 
     private String remark;
 
-    public Long getRoleId() {
-        return roleId;
+    public Long getId() {
+        return id;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setRoleName(String roleName) {
+        this.roleName = roleName == null ? null : roleName.trim();
     }
 
-    public String getValue() {
-        return value;
+    public String getRoleValue() {
+        return roleValue;
     }
 
-    public void setValue(String value) {
-        this.value = value == null ? null : value.trim();
+    public void setRoleValue(String roleValue) {
+        this.roleValue = roleValue == null ? null : roleValue.trim();
     }
 
-    public String getUrl() {
-        return url;
+    public String getRoleMatcher() {
+        return roleMatcher;
     }
 
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
+    public void setRoleMatcher(String roleMatcher) {
+        this.roleMatcher = roleMatcher == null ? null : roleMatcher.trim();
     }
 
-    public String getIsuserable() {
-        return isuserable;
+    public String getEnabled() {
+        return enabled;
     }
 
-    public void setIsuserable(String isuserable) {
-        this.isuserable = isuserable == null ? null : isuserable.trim();
+    public void setEnabled(String enabled) {
+        this.enabled = enabled == null ? null : enabled.trim();
     }
 
     public String getRemark() {

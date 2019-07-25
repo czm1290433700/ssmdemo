@@ -5,7 +5,6 @@ import com.czm.entity.User;
 import com.czm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 /**
  * Created by wly on 2017/12/15.
  */
@@ -43,7 +42,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         User user = new User();
-        user.setUserId(id);
+        user.setId(id);
         return userMapper.selectOne(user);
     }
 
@@ -57,13 +56,13 @@ public class UserServiceImpl implements UserService {
     public User findById(String id) {
         User user = new User();
         Long uid = Long.parseLong( id );
-        user.setUserId( uid );
+        user.setId( uid );
         return userMapper.selectOne( user );
     }
 
     public User findById(long id) {
         User user = new User();
-        user.setUserId( id );
+        user.setId( id );
         return userMapper.selectOne( user );
     }
 

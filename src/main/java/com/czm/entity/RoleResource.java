@@ -3,9 +3,9 @@ package com.czm.entity;
 public class RoleResource {
     private Long id;
 
-    private Long roleId;
+    private Long rId;
 
-    private Long resourcesId;
+    private Long resId;
 
     public Long getId() {
         return id;
@@ -15,19 +15,19 @@ public class RoleResource {
         this.id = id;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public Long getrId() {
+        return rId;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setrId(Long rId) {
+        this.rId = rId;
     }
 
-    public Long getResourcesId() {
-        return resourcesId;
+    public Long getResId() {
+        return resId;
     }
 
-    public void setResourcesId(Long resourcesId) {
-        this.resourcesId = resourcesId;
+    public void setResId(Long resId) {
+        this.resId = resId;
     }
 }
